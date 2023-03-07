@@ -13,8 +13,25 @@ import java.util.TreeSet;
 public class Main3 {
 	//솔루션 함수 
 	public int solution(int n, int k, int[]arr) {
-		int answer= 0;
-		TreeSet<Integer> Test = new TreeSet<>(Collections.reverseOrder());
+		int answer= -1;
+		//TreeSet을 내림차순 정렬 
+		TreeSet<Integer> Tset = new TreeSet<>(Collections.reverseOrder());
+		
+		//n개의 카드 중 3장을 뽑는 것
+		for(int i = 0; i<n; i++) {
+			for(int j=i+1; j<n; j++) {
+				for(int l = j+1; l<n; l++) {
+					//뽑은 3개 카드를 더해서 set에 추가
+					Tset.add(arr[i]+arr[j]+arr[l]);
+				}
+			}
+		}
+		int cnt = 0; //몇번째인지 누적
+		//TreeSet 내부에서 k번째 큰 수 탐색
+		for(int x : Tset) {
+			cnt++;
+			if(cnt == k) return x;
+		}
 		
 		return answer;
 	}
@@ -33,5 +50,4 @@ public class Main3 {
 		
 		System.out.println(T.solution(n, k, arr));
 	}
-
 }
