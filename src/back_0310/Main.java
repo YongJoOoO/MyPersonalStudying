@@ -25,7 +25,6 @@ public class Main {
 					System.out.println("-1");
 				} else
 					System.out.println(stack.pop());
-
 			} else if (m.equals("size")) {
 				System.out.println(stack.size());
 			} else if (m.equals("empty")) {
@@ -41,8 +40,6 @@ public class Main {
 				} else
 					System.out.println(stack.peek());
 			}
-
 		}
 	}
-
 }
