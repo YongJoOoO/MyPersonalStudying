@@ -17,7 +17,7 @@ public class Main1 {
 			int idx = i;
 			//j가 i+1 ~ n 까지 돌며 가장 작은 작은 값의 idx값을 세팅함
 			for(int j = i+1; j<n; j++) {
-				if(arr[j] < arr[idx]) idx = j;
+				if(arr[j] < arr[idx]) idx = j; 
 			}
 			//for 탈출하면 idx에는 i기준 뒤쪽을 j가 돌며 가장 작은 값의 idx를 세팅한 상태
 			//따라서 기준 i의 값 <-> idx로 찍은 최소값 swap
