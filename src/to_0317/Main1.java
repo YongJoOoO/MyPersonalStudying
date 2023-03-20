@@ -24,7 +24,6 @@ public class Main1 {
 			if(arr[mid] == m) {
 				answer = mid+1;
 				break;//답 찾았으니 탈출 
-				
 			}
 			// 중앙값 > m : 왼쪽에서 탐색해야 함 
 			if(arr[mid] > m) {
@@ -35,10 +34,8 @@ public class Main1 {
 				lt = mid+1;
 			}
 		} 
-		
 		return answer;
 	}
-	
 	//실행 메인 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -53,5 +50,4 @@ public class Main1 {
 		
 		System.out.println(T.solution(n, m, arr));
 	}
-
 }
