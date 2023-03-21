@@ -4,7 +4,7 @@ package to_0320;
 public class Main3 {
 	//솔루션 함수
 	public int DFS(int n) {
-		int answer = 0;
+		
 		if(n==1) return 1; 
 		else return n * DFS(n-1);
 	}
