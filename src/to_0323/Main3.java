@@ -1,8 +1,7 @@
 package to_0323;
 
 import java.util.Scanner;
-
-/* 8-3. 최대 점수 구하기 DFS  
+/* 8-3. 최대 점수 구하기 DFS   
  * */
 public class Main3 {
 	static int answer = Integer.MIN_VALUE;
