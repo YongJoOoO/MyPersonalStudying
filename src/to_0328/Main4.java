@@ -1,13 +1,13 @@
-package to_0328_1;
+package to_0328;
 
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
 /* 8-13. 섬나라 아일랜드 BFS */
-class Point{
+class Point5{
 	int x, y;
-	Point(int x, int y ){
+	Point5(int x, int y ){
 		this.x = x;
 		this.y = y;
 	}
@@ -20,17 +20,17 @@ public class Main4 {
 	
 	//BFS
 	public void BFS(int x, int y, int[][] board) {
-		Queue<Point> Q = new LinkedList<>();
+		Queue<Point5> Q = new LinkedList<>();
 		//받은 첫 위치는 큐에 담기
-		Q.offer(new Point(x, y));
+		Q.offer(new Point5(x, y));
 		while(!Q.isEmpty()) {
-			Point pos = Q.poll();
+			Point5 pos = Q.poll();
 			for(int i =0; i<8; i++) {
 				int nx = pos.x + dx[i];
 				int ny = pos.y + dy[i];
 				if(nx >=0 && nx <n && ny >=0 && ny<n && board[nx][ny] == 1) {
 					board[nx][ny] = 0;
-					Q.offer(new Point(nx, ny));
+					Q.offer(new Point5(nx, ny));
 				}
 			}
 		}
