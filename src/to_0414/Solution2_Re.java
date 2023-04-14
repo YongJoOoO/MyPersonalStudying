@@ -1,6 +1,5 @@
 package to_0414;
-/* 1-4. 좌석번호 복습 풀이 
- * */
+/* 1-4. 좌석번호 복습 풀이 */
 import java.util.Arrays;
 
 class Solution2_Re {
@@ -33,7 +32,7 @@ class Solution2_Re {
 
 		return answer;
 	}
-	//실행 메인 
+	//실행 메인  
 	public static void main(String[] args){
 		Solution2_Re T = new Solution2_Re();
 		System.out.println(Arrays.toString(T.solution(6, 5, 12)));	
