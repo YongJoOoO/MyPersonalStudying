@@ -27,19 +27,14 @@ class Solution2 {
 		//대각선은 각자 자기 자신에게 가는 값이므로 0초기화 
 		for(int i=0; i<10; i++) dist[i][i] = 0; //대각선 값은 0초기화 	
 		
-		for(int i=0; i<3; i++) {
-			for(int j =0; j<3; j++) {
-				//키패드 차례로 순회함
-				//ex. 0행 0열의 값이 from에 있으면 (얘는 출발점) 
+
+		for(int i = 0; i < 3; i++){
+			for(int j = 0; j < 3; j++){
 				int from = pad[i][j];
-				//from출발점에 인접한 8방향에 대하여 돌기 위해 k로 돌기
-				for(int k =0; i<8; k++) {
-					//패드 경계 내부의 값이면
-					if(i+dx[k] >=0 && i+dx[k] <3 && j+dy[k] >=0 && j+dy[k] <3) {
-						//from 기준으로 인접하게 이동했던 숫자들 (-> k로 돌면서 차례로 to 변수에 담음)
+				for(int k = 0; k < 8; k++){
+					if(i+dx[k] >= 0 && i+dx[k] < 3 && j+dy[k] >= 0 && j+dy[k] < 3){
 						int to = pad[i+dx[k]][j+dy[k]];
-						//from -> to 로 가능 시간 1초로 재세팅 
-						dist[from][to]= 1; //인접한 값이면 1
+						dist[from][to] = 1;
 					}
 				}
 			}
