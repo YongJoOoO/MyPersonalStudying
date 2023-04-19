@@ -16,17 +16,15 @@ class Solution2 {
 		for(int i =0; i<3; i++) {
 			for(int j=0; j<3; j++) {
 				// 이렇게 해서 3X3 에 차례로 값 담기 가능 
-				pad[i][j] = keypad[i*3+j];
+				pad[i][j] = keypad[i*3 + j];
 			}
 		}
 		//내부의 값을 기본 2 초기화 
-		for(int i=0; i<10; i++) {
-			//dist[i] 각 i 번째의 dist 배열에 2로 초기화시킴 
-			Arrays.fill(dist[i], 2); 
+		for(int i = 0; i < 10; i++){
+			Arrays.fill(dist[i], 2);
 		}
 		//대각선은 각자 자기 자신에게 가는 값이므로 0초기화 
 		for(int i=0; i<10; i++) dist[i][i] = 0; //대각선 값은 0초기화 	
-		
 
 		for(int i = 0; i < 3; i++){
 			for(int j = 0; j < 3; j++){
@@ -40,11 +38,11 @@ class Solution2 {
 			}
 		}
 		//이제 입력된 password비번 순서대로 시간 확인하면서 누적
-		for(int i=1; i<password.length(); i++) {
-			int from = (int) password.charAt(i-1)-48;
-			int to = (int) password.charAt(i)-48;
+		for(int i = 1; i < password.length(); i++){
+			int from = (int)password.charAt(i-1)-48;
+			int to = (int)password.charAt(i)-48;
 			answer += dist[from][to];
-		}
+		}	
 		return answer;
 	}
 	//실행 메인 
