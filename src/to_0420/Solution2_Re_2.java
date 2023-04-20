@@ -1,27 +1,24 @@
 package to_0420;
-/* 2-2. 다시 풀기ㅣ RE */
+
 import java.util.*;
-class Solution2_Re {
+class Solution2_Re_2 {
 	public int[] solution(String s){
 		int[] answer = new int[5];
 		HashMap<Character, Integer> map = new HashMap<>();
-		//1) 해싱
+		//1)각 문자별 빈도수 해싱하기
 		for(char x : s.toCharArray()) {
-			map.put(x, map.getOrDefault(x, 0)+1); //중복 없는 문자 발견 시 +1
+			map.put(x, map.getOrDefault(x, 0)+1);
 		}
-		//2) max를 찾아야 거기에 맞춰서 더 추가해야할 문자개수 발견 가능 
+		//2) max 찾기 
 		int max = Integer.MIN_VALUE;
-		String tmp = "abcde"; // 이 순서대로 값 담아야 하니
-		
+		String tmp = "abcde";//이 순서대로 답 세팅예정
 		for(char x : tmp.toCharArray()) {
-			//최대 max 값 찾는 용도라
-			if(map.getOrDefault(x, 0) > max) {
+			if(max < map.getOrDefault(x, 0)) {
 				max = map.getOrDefault(x, 0);
 			}
 		}
-		
-		//3) max-자기값
-		for(int i=0; i<tmp.length(); i++) {
+		//3) max-기존값 : 추가할 문자 개수이므로 
+		for(int i =0; i<tmp.length(); i++) {
 			answer[i] = max - map.getOrDefault(tmp.charAt(i), 0);
 		}
 		
@@ -29,7 +26,7 @@ class Solution2_Re {
 	}
 
 	public static void main(String[] args){
-		Solution2_Re T = new Solution2_Re();
+		Solution2_Re_2 T = new Solution2_Re_2();
 		System.out.println(Arrays.toString(T.solution("aaabc")));
 		System.out.println(Arrays.toString(T.solution("aabb")));
 		System.out.println(Arrays.toString(T.solution("abcde")));
