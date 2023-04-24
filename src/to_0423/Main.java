@@ -15,7 +15,6 @@ public class Main {
 	//솔루션 함수 
 	public int solution(int n, int[] arr) {
 		int answer = 0;
-		int cnt = 1;
 		int[] A = new int[n];
 		for(int i=0; i<n; i++) {
 			A[i] = 1;
