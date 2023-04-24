@@ -7,13 +7,15 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 // Scanner 사용시 시간초과 => BufferedReader 사용 방법 
 public class Main {
+	//정적변수로 입출력 변수 세팅 
+	static BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+	static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+	
 	
 	//** BufferReader 사용 시 throws IOException 추가 
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		Main T = new Main();
-
-		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
 		//** int 형으로 입력 받으려면 String으로 받아서 형변환
 		int N = Integer.parseInt(bf.readLine());
 		int[] arr1 = new int[N];
