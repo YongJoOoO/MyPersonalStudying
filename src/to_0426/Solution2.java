@@ -1,6 +1,9 @@
 package to_0426;
 /* 2-5. 회장선거 문제풀이 */
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+
 class Solution2 {
 	public String solution(String[] votes, int k){
 		String answer = " ";
@@ -12,14 +15,15 @@ class Solution2 {
 			String[] tmp = x.split(" ");
 			map.put(tmp[1], map.getOrDefault(tmp[1], 0)+1);
 		}
+		
 		for(String key : map.keySet()) {
 			if(map.get(key) >= k) {
-				s += key + " ";
+				s += key+" ";
 			}
 		}
 		
-		HashMap<String, Integer> out = new HashMap<>();
 		//2) 회장선거 나가는 애를 뽑은 애들 중 가장 많은 선물 받는 애 알파벳 순으로 뽑기
+		HashMap<String, Integer> out = new HashMap<>();
 		
 		for(String x : votes) {
 			String[] tmp = x.split(" ");
@@ -33,16 +37,18 @@ class Solution2 {
 				max= out.get(key);			
 			}
 		}
-		
+		ArrayList<String> arr = new ArrayList<>();
 		//3) 많이 선물 받은애 까지는 구했는데.
 		for(String key : out.keySet()) {
 			if(out.get(key) == max) {
-				answer += key+" "; 
+				arr.add(key);
 			}
 		}
-		//4) 여러 애들 중 알파벳 앞순으로 뽑는 걸 못하겠음 ...
-		
-		
+		//4) 알파벳 순으로 String 정렬 후 
+		Collections.sort(arr);
+		//첫 번쨰 값을 answer 에 담기 
+		answer = arr.get(0);
+
 		return answer;
 	}
 	
