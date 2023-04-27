@@ -51,7 +51,7 @@ class Solution2 {
 
 		return answer;
 	}
-	
+
 	//실행 메인 
 	public static void main(String[] args){
 		Solution2 T = new Solution2();
