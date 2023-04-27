@@ -4,7 +4,7 @@ import java.util.*;
 class Info implements Comparable<Info>{
 	public String name;
 	public int time;
-	
+
 	//생성자
 	Info(String name, int time){
 		this.name= name;
