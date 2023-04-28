@@ -9,14 +9,20 @@ class Solution2 {
 		Stack<String> st = new Stack<>();
 		for(Character x : s.toCharArray()) {
 			if(x == ')') {
-				String tmp = "";
+				//임시 문자열 
+				String tmp = ""; 
+				//스택 빌때까지 반복 
 				while(!st.empty()) {
+					//일단 pop
 					String c = st.pop();
+					//만약 여는 괄호 만나면 
 					if(c.equals("(")) {
 						String num = "";
+						//숫자인 동안은 num에 누적 
 						while(!st.empty() && Character.isDigit(st.peek().charAt(0))) {
 							num = st.pop()+num;
 						}
+						//거꾸로 문자열 다시 뽑기 
 						String res = "";
 						int cnt = 0;
 						if(num.equals("")) cnt=1;
