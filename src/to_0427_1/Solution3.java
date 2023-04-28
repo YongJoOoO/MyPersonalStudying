@@ -21,6 +21,7 @@ class Solution3 {
 			String b = x.split(" ")[1];
 			String c = x.split(" ")[2];
 			if(c.equals("in")) inT.put(a, getTime(b));
+			//중복인 있ㅆ으므로 누적합 구해야 함
 			else sumT.put(a, sumT.getOrDefault(a, 0) + (getTime(b) - inT.get(a)));
 		}
 		ArrayList<String> res = new ArrayList<>();

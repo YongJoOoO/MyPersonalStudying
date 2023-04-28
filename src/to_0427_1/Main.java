@@ -10,12 +10,11 @@ public class Main {
     }
 }
 class Solution {
-    public String solution(String s) {
-        String answer = "";
+    public long[] solution(int x, int n) {
+        long[] answer = {};
         
-        for(String x : s.split(" ")){
-            answer += x;
-            
+        for(int i=1; i<=n; i++){
+            answer[i-1] = x * i; 
         }
         
         return answer;
