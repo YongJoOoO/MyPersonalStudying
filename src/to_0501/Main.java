@@ -1,7 +1,7 @@
 package to_0501;
 
 import java.util.*;
-/*2154번. 카드 2 */
+/*2164번. 카드 2 */
 public class Main {
 
 	//솔루션 함수
