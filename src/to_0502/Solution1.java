@@ -8,12 +8,16 @@ class Solution1 {
 		Queue<Integer> enter = new LinkedList<>();
     	//나가는 대기열 
 		Queue<Integer> exit = new LinkedList<>();
+		//prev = 직전 현관문 출입 상태 (1 = 나감, 0 = 들어옴)
     	int n = arrival.length, prev = 1;
     	int[] answer = new int[n];
+    	//t 시간 ++ 되면서 
     	for(int t = 0, i = 0, cnt = 0; ; t++){
-        	if(enter.isEmpty() && exit.isEmpty() && i < n) {
-            		if(t < arrival[i]){
-                			t = arrival[i];
+    		//즉, 대기열에 아무도 없으면서 아직 사원 다 처리되기 전이면
+    		if(enter.isEmpty() && exit.isEmpty() && i < n) {
+    				//현재 시간이 다음 사원의 도착 시간보다 적으면 
+    				if(t < arrival[i]){
+                			t = arrival[i]; 
                 			prev = 1;
             		}
         	}
