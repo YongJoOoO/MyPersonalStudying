@@ -2,6 +2,7 @@ package to_0504;
 /* 3-5. CPU 스케쥴링 문제 풀이 */
 import java.util.*;
 class Solution1 {
+	
 	//솔루션 함수 
 	public int[] solution(int[][] tasks){
 		int n = tasks.length;
