@@ -1,13 +1,15 @@
 package to_0504;
-/* 3-5. CPU 스케줄링 */
+/* 3-5. CPU 스케쥴링 문제 풀이 */
 import java.util.*;
-
 class Solution1 {
+	//솔루션 함수 
 	public int[] solution(int[][] tasks){
 		int n = tasks.length;
 		int[] answer = new int[n];
+		
 		LinkedList<int[]> programs = new LinkedList<>();
 		for(int i = 0; i < n; i++){
+						//(각 i의 0번쨰 (호출시간), 1번쨰 (작업시간), n번 작업번호 ) 를 ArrayList에 담는다. 
 			programs.add(new int[]{tasks[i][0], tasks[i][1], i});
 		}
 		programs.sort((a, b) -> a[0] - b[0]);
@@ -26,6 +28,7 @@ class Solution1 {
 		return answer;
 	}
 
+	//실행 메인 
 	public static void main(String[] args){
 		Solution1 T = new Solution1();
 		System.out.println(Arrays.toString(T.solution(new int[][]{{2, 3}, {1, 2}, {8, 2}, {3, 1}, {10, 2}})));
