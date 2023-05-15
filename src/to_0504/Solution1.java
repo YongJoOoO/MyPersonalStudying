@@ -28,7 +28,6 @@ class Solution1 {
 		}	
 		return answer;
 	}
-
 	//실행 메인 
 	public static void main(String[] args){
 		Solution1 T = new Solution1();
