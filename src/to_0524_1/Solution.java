@@ -25,7 +25,6 @@ class Solution {
 		for(int i=0; i<k; i++) {
 			answer += diff[i];
 		}
-
 		return answer;
 	}
 	//실행 메인 
