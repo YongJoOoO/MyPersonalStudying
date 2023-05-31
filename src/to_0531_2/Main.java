@@ -36,6 +36,7 @@ public class Main {
 				st++;
 			}
 		}
+
 		System.out.println(count);
 	}
 }
