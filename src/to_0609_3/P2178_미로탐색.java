@@ -14,7 +14,7 @@ public class P2178_미로탐색 {
       int N = Integer.parseInt(st.nextToken());
       int M = Integer.parseInt(st.nextToken());
       char[][] miro = new char[N][M];  // 미로를 저장할 배열
-      int[][] dist = new int[N][M];    // 거리를 계산할 dist 배열
+      int[][] dist = new int[N][M];    // 거리를 계산할 dist 배열 ㄴ
       int[] dx = {1, 0 , -1, 0};       // 상하좌우 계산할 x좌표
       int[] dy = {0, 1, 0, -1};        // 상하좌우 계산할 y좌표
       Queue<Pair> qu = new LinkedList<>();
