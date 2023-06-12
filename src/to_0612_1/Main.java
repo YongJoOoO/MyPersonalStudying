@@ -16,14 +16,14 @@ public class Main {
 	//방문 여부
 	static boolean[][] visited;
 	//오름차순 정렬해야 하는 1차원 아파트 개수
-	static ArrayList<Integer> aparts = new ArrayList<>();
+	static int[] aparts = new int[25*25];
 	//DFS
 	static void DFS(int x, int y ) {
 		
 		//방문 처리
 		visited[x][y] = true;
 		//현 단지 내의 아파트 개수 처리
-		aparts.get(apartNum++);
+		aparts[apartNum]++;
 		
 		for(int i=0; i<4; i++) {
 			int nx = x + dx[i];
@@ -64,17 +64,18 @@ public class Main {
 				if(apart[i][j] == 1 && !visited[i][j]) {
 					//DFS호출 횟수(반환 포함) == 총 단지 묶음 개수 
 					apartNum++;
-					aparts.add(apartNum);
+					
 					DFS(i, j);
 				}
 			}
 		}
 		
 		//정답 오름차순 정려  
-		Collections.sort(aparts);
+		Arrays.sort(aparts);
 		
 		System.out.println(apartNum);//총 단지 수 
 		for(int x : aparts) {
+			if(x == 0) continue;
 			System.out.println(x);
 		}
 	}
