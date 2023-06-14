@@ -6,7 +6,7 @@ public class Main {
 	
 	static int mySum(String x) {
 		int sum = 0;
-		for(String a : x.split("+")) {
+		for(String a : x.split("[+]")) {
 			sum += Integer.parseInt(a);
 		}
 		return sum;
