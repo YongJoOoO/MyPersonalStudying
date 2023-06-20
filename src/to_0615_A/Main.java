@@ -22,8 +22,7 @@ public class Main {
 			for(int j= i+i; j<=N; j=j+i) { //배수 지우기 
 				arr[j] =0;
 			}
-		}
-		
+		}		
 		//이제 0 제외 차례로 출력
 		for(int i=M; i<=N; i++) {
 			if(arr[i] != 0) {
