@@ -4,14 +4,14 @@ import java.io.BufferedWriter;
 import java.io.OutputStreamWriter;
 import java.util.Scanner;
 
-/* 1850번. 최대공약수 구하기 
- * */
+/* 1850번. 최대공약수 구하기 */
 public class Main {
 	static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+	//최대공약수 구하는 법 
 	static long gcd (long a, long b) {
-		if(b==0) return a;
+		if(b==0) return a;//작은 수가 0이되면 그떄의 큰 수 반환 
 		else {
-			return gcd(b, a%b);
+			return gcd(b, a%b); //작은 수를 큰 수로 넘기면서, 작은수는 다시 나머지값 갱신
 		}
 	}
 	//실행 메인
