@@ -29,8 +29,6 @@ class Solution {
                 maps[nx][ny] = maps[cur[0]][cur[1]] + 1;
             }
         }
-        
-        
     }
     
     //solution
