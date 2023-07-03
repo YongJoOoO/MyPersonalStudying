@@ -64,13 +64,12 @@ public class Main {
 			if(visited[cv]) continue;
 			visited[cv] = true;
 			
-			for(int i=0; i<list[cv].size(); i++) {
-				Node tmp = list[cv].get(i);
-				int nx = tmp.v;
-				int val = tmp.value;
-				if(distance[nx] > distance[cv]+val) {
-					distance[nx]= val + distance[cv];
-					Q.add(new Node(nx, distance[nx]));
+			for(Node x: list[cv]) {
+				int nv = x.v;
+				int val = x.value;
+				if(distance[nv] > distance[cv]+val) {
+					distance[nv] = val + distance[cv];
+					Q.add(new Node(nv, distance[nv]));
 				}
 			}
 		}
