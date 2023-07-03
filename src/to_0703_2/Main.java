@@ -13,8 +13,7 @@ class Node implements Comparable<Node>{
 		this.value = value;
 	}
 	public int compareTo(Node o) {
-		if(this.value > o.value) return 1;
-		else return -1;
+		return this.value - o.value;//값 기준 오르마순 정렬
 	}
 }
 
