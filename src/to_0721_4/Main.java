@@ -1,5 +1,5 @@
 package to_0721_4;
-//DFS 로 문자열 만들기 
+//DFS 로 문자열 만들기 *** 하 다시 해야지
 
 public class Main {
 	static int N;
