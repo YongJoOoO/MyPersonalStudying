@@ -1,27 +1,27 @@
-package to_0724_5;
+package to_0724_6;
 import java.util.*;
 class Solution {
+	//솔루션 함수 
 	public int solution(int[] plantTime, int[] growTime){
 		int answer = 0;
-		int n= plantTime.length;
-		int[][] list = new int[n][2];
-		for(int i = 0; i < n; i++){
-			list[i][0] = plantTime[i];
-			list[i][1] = growTime[i];
+		int n = growTime.length;
+		int[][] flower = new int[n][2];
+		for(int i=0; i<n; i++) {
+			flower[i][0] = plantTime[i];
+			flower[i][1] = growTime[i];
 		}
-		//growTime 역순 정렬 내림차순 
-		Arrays.sort(list, (a, b) -> b[1] - a[1]);
+		//정렬-성장시간 역순
+		Arrays.sort(flower, (a,b) -> (b[1]- a[1]));
 		
-		//그리디 
-		int start = 0, end = 0;
-		for(int[] x : list){
-			end = start + x[0] + x[1];
-			answer = Math.max(answer, end);
-			start += x[0];
-		}
+		//그리디
+		int st=0, ed = 0;
+		for(int[] x : flower) {
+			ed = st + x[0] + x[1];//시작+심기+성장
+			answer = Math.max(answer, ed);
+			st += x[0];//성장시간 
+		}	
 		return answer;
 	}
-
 	public static void main(String[] args){
 		Solution T = new Solution();
 		System.out.println(T.solution(new int[]{1, 3, 2}, new int[]{2, 3, 2}));
