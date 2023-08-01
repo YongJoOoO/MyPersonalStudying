@@ -5,7 +5,7 @@ import java.util.Scanner;
 //1965번. 상자 넣기 
 public class Main {
 	
-	//약간 최대증가부분수열 길이 구하는 느낌과 같다. 
+	//약간 최대증가부분수열 길이 구하는 느낌과 같다. 친구 결혼식
 	//dy[i] 의 정의 : i를 마지막으로 선택했을 때의 최대 길이 정도
 	//반드시 큰 상자 안에 작은 상자를 담을 수 있다는 것 주의 
 	public static void main(String[] args) {
