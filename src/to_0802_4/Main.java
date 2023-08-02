@@ -47,20 +47,19 @@ public class Main {
 		Stack<Integer> ans = new Stack<>();//역순 출력해야 하니까 
 		
 		int[] dy = new int[N+1];
-		
-		
+				
 		for(int i=1; i<=N; i++) {
-			int max = 0;
-			for(int j=i; j>=0; j--) { //역순으로 돌면서 
-				if(arr.get(i).w < arr.get(j).w &&  max < dy[j]) {
-					max = Math.max(max, dy[j]);
+			for(int j=0; j<=i; j++) {
+				if(arr.get(i).w < arr.get(j).w ) {
+					dy[i] = Math.max(dy[i], dy[j] + arr.get(i).h);
 				}
 			}
-			//dy[i] 세팅
-			dy[i] = max + arr.get(i).h;//높이 누적
-			
 		}
-
+		
+		for(int x : dy) {
+			System.out.println(x);
+		}
+		/*
 		int maxHeight = -1;
 		
 		for (int i=0; i<=N; i++) {
@@ -82,6 +81,8 @@ public class Main {
 		for (int i=result.size()-1; i>=0; i--) {
 			System.out.println(result.get(i));
 		}
+		
+		*/
 	}
 
 }
