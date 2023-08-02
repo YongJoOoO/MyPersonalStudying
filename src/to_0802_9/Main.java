@@ -1,9 +1,13 @@
-package A;
+package to_0802_9;
 
-import java.util.*;
-import java.io.*;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
 
-//Softeer 장애물 인식 프로그램 문제 풀이
+
 public class Main {
     static int N;
     static int[] dx = {0, 0, 1, -1};
@@ -40,25 +44,23 @@ public class Main {
         
     }
 
-    public static void main(String args[]) throws IOException {
-        
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    public static void main(String args[])  throws IOException{
 
-        N = Integer.parseInt(br.readLine());
-        StringTokenizer st;
+        Scanner kb= new Scanner(System.in);
+
+        N = kb.nextInt();
         
         map = new int[N][N];
         visited = new boolean[N][N];
-
-        //입력을 어떻게 받을 것이냐에 대하여 
-
-        for(int i=0; i<N; i++){
-            st = new StringTokenizer(br.readLine());
-            String line = st.nextToken();
-            for(int j=0; j<N; j++){
-                map[i][j] = Integer.parseInt(String.valueOf(line.charAt(j)));
-            }
+        
+        for(int i=0; i<N; i++) {
+        	for(int j =0; j<N; j++) {
+        		map[i][j]= kb.nextInt();
+        	}
         }
+        
+
+        
 
         int sum = 0;
 

@@ -33,7 +33,7 @@ public class Main {
 			}
 		}
 		for(int x : dp) System.out.print(x + " ");
-		/*
+		
 		int maxHeight = -1;
 		
 		for (int i=0; i<=n; i++) {
@@ -55,7 +55,7 @@ public class Main {
 		for (int i=result.size()-1; i>=0; i--) {
 			System.out.println(result.get(i));
 		}
-		*/
+		
 	}
 }
 

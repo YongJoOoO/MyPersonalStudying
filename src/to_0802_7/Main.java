@@ -1,9 +1,11 @@
 package to_0802_7;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Scanner;
-import java.util.Stack;
+import java.util.StringTokenizer;
 
 class Brick implements Comparable<Brick>{
 	int num, s, h, w;
@@ -21,18 +23,22 @@ class Brick implements Comparable<Brick>{
 }
 public class Main {
 	//실행메인 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException{
 		// TODO Auto-generated method stub
-		Scanner kb= new Scanner(System.in);
-		int n =kb.nextInt();
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		
+		int n = Integer.valueOf(br.readLine());
 		
 		int[] dy = new int[n];
 		
 		ArrayList<Brick> arr= new ArrayList<>();
 		for(int i=0; i<n; i++) {
-			int a= kb.nextInt();
-			int b= kb.nextInt();
-			int c= kb.nextInt();
+			StringTokenizer st = new StringTokenizer(br.readLine());
+			
+			int a= Integer.valueOf(st.nextToken());
+			int b= Integer.valueOf(st.nextToken());
+			int c= Integer.valueOf(st.nextToken());
 			arr.add(new Brick(i+1, a, b, c));
 		}
 		Collections.sort(arr);
@@ -49,19 +55,23 @@ public class Main {
 			dy[i] = max + arr.get(i).h;
 			maxHeight = Math.max(maxHeight, dy[i]);
 		}
-		Stack<Integer> st = new Stack<>();
+	
+		ArrayList<Integer> ans = new ArrayList<>();
 		
-		int idx=n-1;
+		int idx =dy.length -1;
 		while(idx >= 0) {
 			if(maxHeight == dy[idx]) {
-				st.push(arr.get(idx).num);
+				ans.add(arr.get(idx).num);
 				maxHeight -= arr.get(idx).h;
 			}
 			idx--;
 		}
-		System.out.println(st.size());
-		while(!st.isEmpty()) {
-			System.out.println(st.pop());
+		
+		System.out.println(ans.size());
+		
+		for(int i=ans.size()-1; i>=0; i--) {
+			System.out.println(ans.get(i));
 		}
+	
 	}
 }
