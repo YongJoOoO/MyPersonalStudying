@@ -1,11 +1,13 @@
 package to_0802_9;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.Scanner;
+import java.util.StringTokenizer;
 
 
 public class Main {
@@ -46,20 +48,22 @@ public class Main {
 
     public static void main(String args[])  throws IOException{
 
-        Scanner kb= new Scanner(System.in);
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st;
 
-        N = kb.nextInt();
+        N = Integer.parseInt(br.readLine());
         
         map = new int[N][N];
         visited = new boolean[N][N];
-        
+        //입력을 어떻게 	받을 것이냐 
         for(int i=0; i<N; i++) {
+        	st = new StringTokenizer(br.readLine());
+        	String line = st.nextToken();
         	for(int j =0; j<N; j++) {
-        		map[i][j]= kb.nextInt();
+        		map[i][j] = Integer.parseInt(String.valueOf(line.charAt(j)));
         	}
         }
         
-
         
 
         int sum = 0;
