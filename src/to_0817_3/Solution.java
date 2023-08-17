@@ -14,10 +14,22 @@ class Solution {
 		visited[x][y] = true;
 		Q.add(new int[] {x, y});
 		int lv= 0;
-		
-		
-		
-		
+		while(!Q.isEmpty()) {
+			int len = Q.size();
+			for(int i =0; i<len; i++) {
+				int[] cur = Q.poll();
+				for(int j=0; j<4; j++) {
+					int nx = x + dx[i] ;
+					int ny = y + dy[i];
+					if(nx <0 || ny< 0 || nx >= 7 || ny >=7) continue;
+					if(!visited[nx][ny] && board[nx][ny] == 0) {
+						visited[nx][ny] = true;
+						Q.add(new int[] {nx, ny});
+						board[nx][ny] =  board[cur[0]][cur[1]] + 1;
+					}
+				}
+			}
+		}
 	}
 	
 	//솔루션 함수 
@@ -30,7 +42,9 @@ class Solution {
 		
 		BFS(0, 0, board);
 		
-		return -1;
+		if(board[6][6] == 0) return -1;
+		
+		return board[6][6];
 	}
 		
 	public static void main(String[] args){
