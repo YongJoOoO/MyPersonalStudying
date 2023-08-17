@@ -12,20 +12,22 @@ class Solution {
 	static void BFS(int x, int y, int[][] board) {
 		Queue<int[]> Q = new LinkedList<>();
 		visited[x][y] = true;
-		Q.add(new int[] {x, y});
+		Q.offer(new int[] {x, y});
 		int lv= 0;
 		while(!Q.isEmpty()) {
+			lv++;
 			int len = Q.size();
 			for(int i =0; i<len; i++) {
 				int[] cur = Q.poll();
 				for(int j=0; j<4; j++) {
-					int nx = x + dx[i] ;
-					int ny = y + dy[i];
+					int nx = cur[0]+ dx[i] ;
+					int ny = cur[1] + dy[i];
 					if(nx <0 || ny< 0 || nx >= 7 || ny >=7) continue;
 					if(!visited[nx][ny] && board[nx][ny] == 0) {
 						visited[nx][ny] = true;
-						Q.add(new int[] {nx, ny});
-						board[nx][ny] =  board[cur[0]][cur[1]] + 1;
+						board[nx][ny] = 1;
+						Q.offer(new int[] {nx, ny});
+						dist[nx][ny] = lv;
 					}
 				}
 			}
@@ -42,9 +44,9 @@ class Solution {
 		
 		BFS(0, 0, board);
 		
-		if(board[6][6] == 0) return -1;
+		if(dist[6][6] == 0) return -1;
 		
-		return board[6][6];
+		return dist[6][6];
 	}
 		
 	public static void main(String[] args){
