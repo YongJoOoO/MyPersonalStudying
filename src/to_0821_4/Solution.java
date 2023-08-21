@@ -1,59 +1,58 @@
-package to_0821_2;
-//최소비행기 비용 - 다익스트라 
+package to_0821_4;
 import java.util.*;
-
+//RE 다시 풀이 - 비행기 최소비용 
 class Solution {
-	
 	static int[] distance;
 	static ArrayList<ArrayList<int[]>> graph;
 	static Queue<int[]> Q;
 	
+	//solution 함수 
 	public int solution(int n, int[][] flights, int s, int e, int k){
-		
-		distance = new int[n];//0부터 n-1번까지만 
-		Arrays.fill(distance, 1000000000); //최초값은 무한대로 크게 초기화 
-		
+		distance = new int[n];//정점개수
 		graph = new ArrayList<>();
+		Q = new LinkedList<>();
+		
 		for(int i=0; i<n; i++) {
-			graph.add(new ArrayList<>()	);//각 정점에 대한 공간 생성 
+			graph.add(new ArrayList<>());//공간ㄱ생성 
 		}
-		//데이터 삽입
-		for(int[] x : flights){
-			graph.get(x[0]).add(new int[]{x[1], x[2]});
+		//값 채워넣기 
+		Arrays.fill(distance, Integer.MAX_VALUE);
+		
+		//데이터 세팅 
+		for(int[] x : flights) {
+			graph.get(x[0]).add(new int[] {x[1], x[2] });
 		}
-
-		Q= new LinkedList<>();		
-		//시작점 초기화
-		distance[s]=0;//자기 자신에 대한 거리는 0
+		
+		//시작점 세팅 
+		distance[s] = 0;
 		Q.add(new int[] {s, 0});
 		
-		int L = 0;
-		
-		while(!Q.isEmpty()){
-			int len = Q.size();
-			for(int i = 0; i < len; i++){
+		int lv = 0;
+		while(!Q.isEmpty()) {
+			int len= Q.size();
+			for(int i=0; i<len; i++) { //하나의 레벨 탐색하는 거임 그 인접 정점들 싹 방문하니까 
 				int[] cur = Q.poll();
-				int c_v= cur[0];
-				int c_val = cur[1]; //이때 꺼낸 값으로 접근해야 한다. for문을 도는 중이라 변한다 distance로 접근하면 값이 변할 수 있다
-				
-				for(int[] x : graph.get(c_v)){
-					int nx_v = x[0];
-					int nx_val = x[1];
+				int c_v = cur[0];
+				int c_val = cur[1];
+				for(int[] nx : graph.get(c_v)) {
+					int nx_v = nx[0];
+					int nx_val = nx[1];
 					if(distance[nx_v] > c_val + nx_val) {
 						distance[nx_v] = c_val + nx_val;
 						Q.add(new int[] {nx_v, distance[nx_v]});
 					}
 				}
 			}
-			L++;
-			if(L > k) break; 
+			lv++;
+			if(lv > k) break;
 		}
 		
-		if(distance[e] == 1000000000) return -1;//아예 갈 방법도 없으면 -1처리 
+		//break 걸어놓은 상태에서 e 도착점까지의 거리 출력하면 됨 
+		if(distance[e] == Integer.MAX_VALUE) return -1;
 
 		return distance[e];
 	}
-		
+	//실행 메인 	
 	public static void main(String[] args){
 		Solution T = new Solution();
 		System.out.println(T.solution(5, new int[][]{{0, 1, 10}, {1, 2, 20}, {0, 2, 70}, {0, 3, 100}, {1, 3, 80}, {2, 3, 10}, {2, 4, 30}, {3, 4, 10}}, 0, 3, 1));
