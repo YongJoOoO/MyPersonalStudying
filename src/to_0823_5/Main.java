@@ -3,14 +3,6 @@ package to_0823_5;
 import java.util.*;
 
 /*2056번. 작업 - 문풀 */
-class Node{
-	int n;
-	int time;
-	Node(int n, int time){
-		this.n= n;
-		this.time =time;
-	}
-}
 public class Main {
 	
 	static int N;
@@ -62,23 +54,20 @@ public class Main {
 			arr.add(cur);
 			
 			for(int nx : graph.get(cur)) {
-				indegree[nx] --;//cur이 지칭하는 정점 진입차수 -- 처리 
-									//기존 nx 시간 vs 현재cur 값 + time[nx] 중 큰 값 
+				indegree[nx] --;//cur이 지칭하는 정점 진입차수 -- 
+				//이게 왜 그런 거냐면 nx 좌표의 시간값 = 현재 cur로 뽑은 시간 이후에 닿는 정점이기 때문에
+				//그 시간 + nx의 time 값 합친 거 중에 큰 값 세팅 
 				result[nx] = Math.max(result[nx], result[cur] + time[nx]);
 				if(indegree[nx] == 0) {
 					Q.offer(nx);
 				}
 			}
 		}
-		
-		//정답 세팅이 어렵다.
+		//모든 작업 완료하는데 걸리는 최소시간 
 		int ans = 0;
 		for(int i=1; i<=N; i++) {
-			System.out.print(result[i] + " ");
 			ans = Math.max(ans, result[i]);
 		}
-		
-		//System.out.println(ans);
+		System.out.println(ans);
 	}
-
 }
