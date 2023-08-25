@@ -63,7 +63,6 @@ public class Main {
 		//초기화 
 		edges = new ArrayList<>();
 		distance= new int[n+1];
-		
 		for(int i=0; i<m; i++) {
 			int u = kb.nextInt();
 			int v = kb.nextInt();
@@ -73,40 +72,21 @@ public class Main {
 		}
 		
 		boolean flag = bellmanFord();
-		/*
-		if(flag) {
-			//음수 사이클이 존재했다면 
-			System.out.println("-1");
-		}else {
-			//parent에 저장된 정보는 직전 정점을 나타내는 것이므로
-			//실제 경로 출력하려면 거꾸로 따라가면서 경로를 구성해야 한다.
-			//parent를 역으로 탐색하며 구성하고 출력할 것 
-			for(int i=1; i<=n; i++) {
-				System.out.print(parent[i]);
-			}
-		}
-		*/
+
 		if (flag) {
 		    // 음수 사이클이 존재했다면
 		    System.out.println("-1");
 		} else {
-		    for (int i = 2; i <= n; i++) {
-		        if (parent[i] == 0) {
-		            System.out.println("-1");
-		            return;
-		        }
-		    }
 		    List<Integer> path = new ArrayList<>();
-		    int current = n;
-		    while (current != 1) {
-		        path.add(current);
-		        current = parent[current];
+		  
+		    int cur = n; //5부터
+		    while(cur!=1){
+		    	path.add(cur);
+		    	cur = parent[cur];
 		    }
 		    path.add(1);
-
-		    Collections.reverse(path);
-		    for (int node : path) {
-		        System.out.print(node + " ");
+		    for(int i=path.size()-1; i>=0; i--) {
+		    	System.out.print(path.get(i)+" "); // -> 메모리 초과가 계속 뜨는 이유는 ?????????????
 		    }
 		}
 	}
