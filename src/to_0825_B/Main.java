@@ -19,7 +19,7 @@ public class Main {
 	//bellmanFord
 	static boolean bellmanFord() {
 		//최솟값으로 초기화
-		Arrays.fill(distance, Integer.MIN_VALUE);
+		Arrays.fill(distance, Integer.MIN_VALUE); //가중치 큰 값 찾아 세팅할 거니까
 		parent = new int[n+1];
 		
 		//시작점 처리 
@@ -28,30 +28,22 @@ public class Main {
 		for(int i=1; i<n; i++) { //n-1번 반복 
 			for(int j=0; j<edges.size(); j++) {
 				Edge ed = edges.get(j);
-				//더 큰 가중치 나오면 
+				//더 큰 가중치 나오면 - 최대 가중치가 목적이니까
 				if(distance[ed.e] < distance[ed.s] + ed.val) {
 					//값 갱신 
 					distance[ed.e] = distance[ed.s] + ed.val;
-					parent[ed.e] = ed.s;//직전 정점 담기 
+					parent[ed.e] = ed.s;//직전 정점 담기 - 경로 출력을 위해서
 				}
 			}
-		}
-		
-		//1번 더 반복해서 만약에 업데이트 되는 값 존재한다면 ?
+		}	
+		//1번 더 반복해서 만약에 업데이트 되는 값 존재한다면 -> 양수 사이클이 존재한다는 것.
 		for(int i=0; i<edges.size() ; i++) {
 			Edge ed = edges.get(i);
 			if(distance[ed.e] < distance[ed.s] + ed.val) {
 				return true;//최적 경로 안존재함 - 음수 사이클 
 			}
 		}
-		return false; //음수 사이클 없음 
-	}
-	
-	static int find(int a) {
-		if(a==parent[a]) return a;
-		else {
-			return parent[a]= find(parent[a]);
-		}
+		return false; //양수 사이클 없음 
 	}
 	
 	public static void main(String[] args) {
@@ -70,22 +62,22 @@ public class Main {
 			//일방통행이므로 
 			edges.add(new Edge(u, v, val));
 		}
-		
+		//벨만포드 호출하고 결과값 flag에 담으면 -> flag = true일 경우, false일 경우 나눠서 처리
 		boolean flag = bellmanFord();
 
 		if (flag) {
 		    // 음수 사이클이 존재했다면
 		    System.out.println("-1");
-		} else {
+		} else { //음수 사이클 존재하지 않을 경우 -> 경로 출력하는 부분에 문제가 있는 것 같음 
 		    List<Integer> path = new ArrayList<>();
 		  
-		    int cur = n; //5부터
+		    int cur = n; //5부터 역순으로 직전 정점 찾아다니면 되는데
 		    while(cur!=1){
 		    	path.add(cur);
-		    	cur = parent[cur];
+		    	cur = parent[cur];//cur의 부모로 cur갱신하면서 계속 직전 정점으로 거슬러 올라감 -> 출력
 		    }
 		    path.add(1);
-		    for(int i=path.size()-1; i>=0; i--) {
+		    for(int i=path.size()-1; i>=0; i--) {//역순 출력해야 간 경로가 순차로 출력 됨
 		    	System.out.print(path.get(i)+" "); // -> 메모리 초과가 계속 뜨는 이유는 ?????????????
 		    }
 		}
