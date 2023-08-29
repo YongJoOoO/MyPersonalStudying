@@ -19,7 +19,8 @@ public class Main {
 			int nx = x + dx[i];
 			int ny = y + dy[i];
 			if(nx<0 || ny<0 || nx >=N || ny>= N) continue;
-			if(map[x][y] < map[nx][ny]) {
+			if(map[x][y] < map[nx][ny]) {//직전 값보다 더 큰 값으로만 이동이 가능하기 때문
+				//기존 값과 nx로 깊이 탐색해서 반환되는 값 + 1
 				dp[x][y] = Math.max(dp[x][y], DFS(nx, ny) + 1);
 			}
 		}
@@ -43,11 +44,10 @@ public class Main {
 		int max = 0;
 		for(int i=0; i<N; i++) {
 			for(int j=0; j<N; j++) {
-			
 				max = Math.max(DFS(i, j), max);
 			}
 		}
+		
 		System.out.println(max);
 	}
-
 }
