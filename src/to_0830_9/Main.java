@@ -89,7 +89,7 @@ public class Main {
 		
 		int[] distance = dijkstra(graph);
 		int[] redistance = dijkstra(reverse);
-		
+		// max 값 찾기 
 		int max = -1;
 		for(int i=1; i<=N; i++) {
 			max = Math.max(max, distance[i] + redistance[i]);
