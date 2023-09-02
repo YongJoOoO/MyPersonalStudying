@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.PriorityQueue;
 import java.util.Scanner;
 
-/*23793번. 두 단계 최단 경로 1 - 다익스트라 */
+/*23793번. 두 단계 최단 경로 1 - 다익스트라 -> 다시 풀 것 !!!!!!!!!!! */
 class Edge implements Comparable<Edge> {
 	long e; 
 	int val;
