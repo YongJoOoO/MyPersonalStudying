@@ -18,7 +18,7 @@ public class Main {
 		for(int i=0; i<M; i++) {
 			int a = kb.nextInt();
 			int b= kb.nextInt();
-			chk[b][a] = true;
+			chk[a][b] = true;
 		}
 		
 		//플로이드
@@ -31,24 +31,7 @@ public class Main {
 				}
 			}
 		}
-		
-		int[] cnt = new int[N+1];		
-		//연결지점 = 진입 + 진출 합침 
-		for(int i=1; i<=N; i++) {
-			for(int j=1; j<=N; j++) {
-				if(chk[i][j] || chk[j][i]) {
-					cnt[i] ++;//연결점 다 출력 
-				}
-			}
-		}
-		int max = Integer.MIN_VALUE;
-		for(int i=1; i<=N; i++) {
-			max = Math.max(max, cnt[i]);
-		}
-		int answer= 0;
-		for(int i=1; i<=N; i++) {
-			if(max == cnt[i]) answer++;
-		}
-		System.out.println(answer);
+
+
 	}
 }
