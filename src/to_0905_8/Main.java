@@ -17,8 +17,8 @@ public class Main {
 			for(int j=0; j<N; j++) {
 				if(i==j) map[i][j] = 0;
 				else {
-					if(s.charAt(j) == 'N') map[i][j] = 0;
-					else if(s.charAt(j) == 'Y') map[i][j] = Integer.MAX_VALUE;
+					if(s.charAt(j) == 'Y') map[i][j] = 1;
+					else if(s.charAt(j) == 'N') map[i][j] = Integer.MAX_VALUE;
 				}
 			}
 		}
@@ -28,21 +28,24 @@ public class Main {
 			//각각의 경유지 k를 거쳐서 
 			for(int i=0; i<N; i++) {
 				for(int j=0; j<N; j++) {
-					if(map[i][j] > map[i][k] + map[k][j] ) {
+					if(map[i][j] > map[i][k] + map[k][j]) {
 						map[i][j] = map[i][k] + map[k][j];
 					}
 				}
 			}
 		}
 		
+		int max = 0;
 		for(int i=0; i<N; i++) {
-			for(int j=0; j<N ;j++) {
-				if(Integer.MAX_VALUE == map[i][j] ) System.out.print("0" + " ");
-				else System.out.print(map[i][j] + " ");
+			int cnt = 0;//행별로 카운팅 
+			for(int j=0; j<N; j++) {
+				if(i==j) continue;
+				if(map[i][j] <= 2) cnt++;
 			}
-			System.out.println();
+			max = Math.max(max, cnt);
 		}
 		
+		System.out.println(max);
+		
 	}
-
 }
