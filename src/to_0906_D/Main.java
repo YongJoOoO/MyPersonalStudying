@@ -58,18 +58,22 @@ public class Main {
 		int useEdge = 0;
 		// 여기 데이터 크기가 다 개 크니까 long 타입으로 선언할 것 !!!!!!!!!!!!
 		long useCost = 0;
-		while(pQ.isEmpty()) {
+		while(useEdge < N-1) {
 			Edge cur = pQ.poll();
+			//그런데 만약 N-1되기 전에 다음 정점이 존재하지 않는다면
+			if(cur==null && useEdge < N-1) {
+				flag = true;
+				break;//탈출
+			}
+			
 			if(find(cur.s) != find(cur.e)) { //사이클 형성 하지 않도록 
 				union(cur.s, cur.e);
 				useCost += cur.val;
 				useEdge++;
-				//만약 사용 간선 N-1개 되면 
-				if(useEdge == N-1) {
-					break;//탈출 
-				}
 			}
 		}
-
+		
+		if(flag == true) System.out.println("-1");
+		else System.out.println(total - useCost);
 	}
 }
