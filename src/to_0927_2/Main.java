@@ -1,6 +1,7 @@
 package to_0927_2;
 
-import java.util.*;
+import java.util.PriorityQueue;
+import java.util.Scanner;
 
 public class Main {
 	static int N;
@@ -28,32 +29,33 @@ public class Main {
 		//'A'는 65 'a'는 97
 		N = kb.nextInt();
 		parent = new int[N+1];
-		map = new int[N][N];
+
 		for(int i=0; i<=N; i++) parent[i]= i;
 		
 		//가중치 오름차 작은 순 정렬
-		PriorityQueue<int[] > pQ = new PriorityQueue<>((a, b) -> a[2]-b[2]);
+		PriorityQueue<int[] > pQ = new PriorityQueue<>((a, b) -> a[2]-b[2]); //오름차순 정렬 
 				
-		int lengh = 0;
+		int total = 0;
 		for(int i=0; i<N; i++) {
 			String tmp = kb.next();
 			for(int j=0; j<N; j++) {
-				if(Character.isUpperCase(tmp.charAt(j))) {
-					//대문자라면 
-					int cost = (int) tmp.charAt(j) - 28;
-					lengh += cost;
-					map[i][j] = cost;
-					pQ.offer(new int[] {i, j, cost});
-				}else if(Character.isLowerCase(tmp.charAt(j))) {
-					//소문자라면 
-					int cost = (int) tmp.charAt(j) - 96;
-					lengh += cost;
-					map[i][j] = cost;
-					pQ.offer(new int[] {i, j, cost});
+				if(tmp.charAt(j) == '0') { continue;
 				}else {
-					//그 외라면 0인 경우밖에 없으므로 
-					map[i][j] = 0;
-					pQ.offer(new int[] {i, j, 0});
+					char c = tmp.charAt(j);
+					int t = 0;
+					if(Character.isUpperCase(c)) {
+						//대문자일 경우 
+						t = c - 'A' + 27;
+					}else if(Character.isLowerCase(c)) {
+						///소문자일 경우 
+						t = c - 'a' + 1;
+					}
+					
+					total += t;
+					
+					if(i!=j && t!=0) {
+						pQ.offer(new int[] {i, j, t});
+					}
 				}
 			}
 		}
@@ -63,15 +65,17 @@ public class Main {
 		
 		while(!pQ.isEmpty()) {
 			int[] cur = pQ.poll();
+			//System.out.println(cur[2]);
 			if(find(cur[0]) != find(cur[1])) {
+				//사이클 형성 하지 않을 경우 
 				union(cur[0], cur[1]);
-				useCost += cur[2];
 				useEdge++;
+				useCost += cur[2];
 			}
 		}
 		
-		if(useEdge == N-1) System.out.println(lengh - useCost);
+		if(useEdge == N-1) System.out.println(total - useCost);
 		else System.out.println("-1");
+		
 	}
-
 }
