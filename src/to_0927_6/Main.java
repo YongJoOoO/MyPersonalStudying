@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.PriorityQueue;
 import java.util.Scanner;
+
+/*9370번. 미확인 도착지 */
+
 class Edge implements Comparable<Edge>{
 	int e, val;
 	Edge(int e, int val){
@@ -24,18 +27,19 @@ public class Main {
 	static int[] distance;//거리 배열 
 	static ArrayList<ArrayList<Edge>> graph;
 	static boolean[] visited;
+	static boolean flag;
 	
 	//다익스트라 
-	static boolean dijkstra(int ed) {
-		boolean flag = false;//가는 경로 중 g, h거쳤는지 확인용 
+	static int dijkstra(int st, int ed) {
+		
 		visited = new boolean[n+1];
 		PriorityQueue<Edge> pQ = new PriorityQueue<>();
 		
 		distance=  new int[n+1];
 		Arrays.fill(distance, Integer.MAX_VALUE);
 		
-		distance[s] = 0;
-		pQ.offer(new Edge(s, 0));
+		distance[st] = 0;
+		pQ.offer(new Edge(st, 0));
 		
 		//목적지에 따라 
 		while(!pQ.isEmpty()) {
@@ -48,16 +52,13 @@ public class Main {
 			
 			for(Edge nx : graph.get(cur.e)) {
 				if(distance[nx.e] > distance[cur.e] + nx.val) {
-					
-					//경유지에서 g-h 도로를 거쳐간 경우 
-					if(cur.e == h && nx.e == g || cur.e == g && nx.e == h) {
-						flag = true;
-					}
 					distance[nx.e] = distance[cur.e] + nx.val;
+					pQ.offer(new Edge(nx.e, distance[nx.e]));
 				}
 			}
 		}
-		return true;
+		
+		return distance[ed];
 	}
 	
 	
@@ -91,23 +92,32 @@ public class Main {
 				graph.get(y).add(new Edge(x, val));
 			}
 			
-			
-			//목적지 t개 입력받기 
 			int[] tmp = new int[t];
-			boolean[] v = new boolean[t];
 			for(int i=0; i<t; i++) {
-				tmp[i]= kb.nextInt();
-				v[i] = dijkstra(tmp[i]);//각각의 목적지 별로 true 인지 false인지 값 담기 
+				tmp[i] = kb.nextInt();
 			}
 			
-			for(int i=1; i<=n; i++) {
-				System.out.print(distance[i]+" ");
+			//가능한 목적지를 여기에 담아서 자동 정렬 되도록 함 
+			PriorityQueue<Integer> pQ = new PriorityQueue<>();
+			//각 목적지별로 답을 담을 건데 
+			for(int dx : tmp) {
+				//1) s->g->h->ed
+				int res1  = dijkstra(s, g) + dijkstra(g, h) + dijkstra(h, dx);
+				//2) s->h->g -> ed
+				int res2 = dijkstra(s, h)+dijkstra(h, g) + dijkstra(g, dx);
+				
+				//3) s -> ed 다이렉트 
+				int res3 = dijkstra(s, dx);
+				
+				if(Math.min(res1, res2) == res3) {
+					pQ.offer(dx);
+				}
 			}
-		
-
-			
+			//정답 출력
+			while(!pQ.isEmpty()) {
+				System.out.print(pQ.poll()+" ");
+			}
+			System.out.println();
 		}
-
 	}
-
 }
