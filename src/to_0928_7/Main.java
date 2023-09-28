@@ -1,6 +1,5 @@
 package to_0928_7;
 
-import java.util.HashMap;
 import java.util.Scanner;
 
 /*2224번. 명제 증명 - 플로이드 문풀 */
