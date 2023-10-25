@@ -13,14 +13,14 @@ public class Main {
 	static int N, M;
 	static int[][] Before;
 	static int[][] After;
-	//4방향 
+	//4방향 상,하,좌,우
 	static int[] dx = {0, 0, 1, -1};
 	static int[] dy = {1, -1 ,0 ,0};
 	
 	//BFS
 	static void BFS(int x, int y) {
-		int targetNum = Before[x][y];
 		int changeNum = After[x][y];//현재값으로 모두 바꿔줄 거임 //시작값
+		int targetNum = Before[x][y];//현재값
 		Queue<int[]> Q = new LinkedList<>();
 		Q.offer(new int[] {x, y});
 		Before[x][y] = changeNum;
@@ -75,11 +75,11 @@ public class Main {
 		}
 		
 		//여기서 이제 Before과 After 지점이 다른 곳을 찾기 
-		for(int i=0; i<N; i++) {
+		Here: for(int i=0; i<N; i++) {
 			for(int j=0; j<M; j++) {
 				if(Before[i][j] != After[i][j]) {
 					BFS(i, j);
-					break;
+					break Here;
 				}
 			}
 		}
@@ -88,9 +88,6 @@ public class Main {
 			System.out.println("YES");
 		}else {
 			System.out.println("NO");
-		}
-	
-		
+		}		
 	}
-
 }
