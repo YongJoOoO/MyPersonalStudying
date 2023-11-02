@@ -43,7 +43,6 @@ public class Main {
 	
 	//mst
 	static int MST(PriorityQueue<Edge> pQ) {
-	
 		int useEdge = 0;
 		int useCost = 0;
 		while(useEdge<P-1) {
@@ -79,7 +78,7 @@ public class Main {
 				int c = kb.nextInt();
 				pQ.offer(new Edge(a, b, c));
 			}
-			
+			//결과 출력
 			System.out.println(MST(pQ));
 		}
 	}
