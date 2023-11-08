@@ -67,6 +67,7 @@ public class Main {
 			int e = kb.nextInt();
 			int val = kb.nextInt();
 			graph.get(s).add(new Edge(e, val));
+			graph.get(e).add(new Edge(s, val));
 		}
 		
 		X = kb.nextInt();
