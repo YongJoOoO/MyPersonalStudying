@@ -60,8 +60,6 @@ public class Main {
 			}
 		}
 	
-		boolean isCycle = false;
-		//호출
 		for(int i=0; i<N; i++) {
 			for(int j=0; j<M; j++) {
 				visited= new boolean[N][M];
