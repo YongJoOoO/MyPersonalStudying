@@ -32,12 +32,13 @@ class Solution {
     			int ny = cur[1] + dy[k];
     			
     			if(nx < 0 || ny <0 || nx >= N || ny >= M) continue;
-    			//이제 
+    			//0은 통로라서 그대로 감 
     			if(board[nx][ny] == 0 && cur[2] < cost[nx][ny]) {
     				//기존 cost보다 더 작은 cur[2]가 존재한다면. 이 값을 사용함
     				cost[nx][ny] = cur[2];
     				pQ.offer(new int[] {nx, ny , cost[nx][ny]});
     			}
+    			//1은 벽이라서 부시기 + 1 처리
     			if(board[nx][ny] == 1 && cur[2] + 1 < cost[nx][ny]) {
     				cost[nx][ny] = cur[2] + 1;
     				pQ.offer(new int[] {nx, ny, cost[nx][ny]});
