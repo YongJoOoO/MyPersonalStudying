@@ -1,4 +1,4 @@
-package to_231120_softeer_TEST_2;
+package to_1120_Test_2;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
