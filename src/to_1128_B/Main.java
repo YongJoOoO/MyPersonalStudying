@@ -42,7 +42,6 @@ public class Main {
 		// TODO Auto-generated method stub
 		Scanner kb= new Scanner(System.in);
 		N = kb.nextInt();
-
 		graph = new ArrayList<>();
 		for(int i=0; i<=N; i++) {
 			graph.add(new ArrayList<>());
@@ -54,7 +53,7 @@ public class Main {
 			int b = kb.nextInt();
 			int val = kb.nextInt();
 			//양방향
-			graph.get(a).add(new Edge(b, val));
+			graph.get(a).add(new Edge(b, val)); //get a기분 new Edge(b, val);
 			graph.get(b).add(new Edge(a, val));
 		}
 		
