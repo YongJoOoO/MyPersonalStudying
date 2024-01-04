@@ -1,4 +1,4 @@
-package to_24_013_7;
+package to_24_0103_7;
 
 import java.util.Scanner;
 
