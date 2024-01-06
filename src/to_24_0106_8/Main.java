@@ -44,8 +44,10 @@ public class Main {
 		int answer = 0;
 		
 		int st = 1, ed= 1000000000;
+		int i=1;//반복 횟수 
 		while(st <= ed) {
 			int mid = (st+ ed)/2;
+			System.out.println(i+" 번째 [ " +st + ", " + ed + "] " + mid);
 			
 			if(getMaxC(mid) >= C) {
 				answer = mid;
@@ -53,6 +55,7 @@ public class Main {
 			}else {
 				ed = mid-1;
 			}
+			i++;
 		}
 		System.out.println(answer);
 	}
