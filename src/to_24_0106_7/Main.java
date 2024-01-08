@@ -17,7 +17,6 @@ public class Main {
 		if(st > ed) return;
 		
 		int mid = (st + ed) / 2;
-		System.out.println(st + " " + ed + " " + mid);
 		
 		if(getMaxC(mid) >= C) {
 			//우리가 설치하려는 공유기 개수보다 크거나 같은경우 
@@ -59,7 +58,9 @@ public class Main {
 		
 		Arrays.sort(arr); //정렬 필수 
 		
-		binarySearch(1, 1000000000);
+		
+		
+		binarySearch(1, arr[N-1] - arr[0]);
 		
 		System.out.println(answer);
 		
