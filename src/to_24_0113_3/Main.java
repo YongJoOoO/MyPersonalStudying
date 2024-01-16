@@ -18,7 +18,7 @@ class Edge{
 	}
 }
 public class Main {
-	
+	static final int INF = 10000001;
 	//실행 메인 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -37,8 +37,8 @@ public class Main {
 			graph.add(new Edge(a, b, val));
 		}
 		
-		long[] distance = new long[N+1];
-		Arrays.fill(distance, Integer.MAX_VALUE);
+		int[] distance = new int[N+1];
+		Arrays.fill(distance, INF);
 		//시작점 초기화
 		distance[1] = 0;
 		
@@ -48,7 +48,7 @@ public class Main {
 			for(int j=0; j<M; j++) { //매 반복마다 모든 간선에 대해 순회함
 				Edge cur = graph.get(j);
 				//다음 정점이 현재 정점값에 val 값 합쳐서 경유하여 가는 게 더 작을 때 갱신 
-				if(distance[cur.st] != Integer.MAX_VALUE && distance[cur.ed] > distance[cur.st] + cur.val) {
+				if(distance[cur.st] != INF && distance[cur.ed] > distance[cur.st] + cur.val) {
 					distance[cur.ed] = distance[cur.st] +cur.val;
 				}
 			}
@@ -58,7 +58,7 @@ public class Main {
 		//이미 N-1번 돌았을 때 최단 경로가 되는 상태인데 만약 한 번 더 돌았을 떄 갱신되는 값이 존재할 경우 음수 사이클이 존재하는 거임
 		for(int i=0; i<M; i++) {
 			Edge cur = graph.get(i);
-			if(distance[cur.st] != Integer.MAX_VALUE && distance[cur.ed] > distance[cur.st] + cur.val) {
+			if(distance[cur.st] != INF && distance[cur.ed] > distance[cur.st] + cur.val) {
 				cycle = true;
 			}
 		}
@@ -68,7 +68,7 @@ public class Main {
 			System.out.println(-1);
 		}else {
 			for(int i=2; i<=N; i++) {
-				if(distance[i] == Integer.MAX_VALUE) {
+				if(distance[i] == INF) {
 					System.out.println("-1");
 					continue;
 				}
