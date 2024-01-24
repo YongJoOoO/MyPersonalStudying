@@ -55,6 +55,11 @@ public class Main {
 				if(!map.containsKey(b)) map.put(b, idx++);
 				
 				System.out.println(union(map.get(a), map.get(b)));
+				
+			}
+			
+			for(int i=1; i<F*2; i++) {
+				System.out.print(friends[i] + " ");
 			}
 		}
 	}
