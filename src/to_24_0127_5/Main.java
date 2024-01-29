@@ -48,17 +48,15 @@ public class Main {
 				
 				//b-a 등수 교체
 				if(graph.get(a).contains(b)) {
-					graph.get(a).remove(b); //기존 간선 제거 
+					graph.get(a).remove( (Integer) b); //기존 간선 제거 
 					graph.get(b).add(a);//방향 바꿔 삽입
 					indegree[a]++;
 					indegree[b]--;
-					continue;
 				}else if(graph.get(b).contains(a)) {
-					graph.get(b).remove(a); //기존 간선 제거 
+					graph.get(b).remove((Integer) a); //기존 간선 제거 
 					graph.get(a).add(b); // 방향 바꿔 삽입
 					indegree[b]++;
 					indegree[a]--;
-					continue;
 				}
 			}
 			
@@ -69,13 +67,13 @@ public class Main {
 			for(int i=1; i<=N; i++) {
 				if(indegree[i] == 0) Q.offer(i);
 			}
-			
 			List<Integer> answer = new ArrayList<>();
-			while(!Q.isEmpty()) {
+			while(!Q.isEmpty()) {	
 				if(Q.size() > 1) {
 					System.out.println("?");
 					break;
 				}
+				
 				int cur = Q.poll();
 				answer.add(cur);
 				for(int nx : graph.get(cur)) {
