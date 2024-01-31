@@ -89,7 +89,7 @@ public class Main {
 			}
 			
 			if(answer.size() != N) {
-				System.out.println("IMPOSSIBLE");
+				System.out.println(answer.size() + "개 : IMPOSSIBLE");
 			}else {
 				for(int x : answer) {
 					System.out.print(x+" ");
