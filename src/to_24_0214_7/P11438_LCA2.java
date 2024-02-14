@@ -31,10 +31,18 @@ public class P11438_LCA2 {
     visited = new boolean[N + 1];
     int temp = 1;
     kmax = 0;
+    
+    int len = N;
+    while(len != 0) {
+    	len /= 2;
+    	kmax++;
+    }
+    /*  
     while (temp <= N) { // 최대 가능 Depth 구하기
       temp <<= 1;
-      kmax++;
+      kmax++; 
     }
+     */
     parent = new int[kmax + 1][N + 1];
     BFS(1); // depth를 BFS를 통하여 구하기
     for (int k = 1; k <= kmax; k++) {
@@ -76,6 +84,7 @@ public class P11438_LCA2 {
       LCA = parent[0][LCA];
     return LCA;
   }
+  
   // BFS구현
   private static void BFS(int node) {
     Queue<Integer> queue = new LinkedList<Integer>();
