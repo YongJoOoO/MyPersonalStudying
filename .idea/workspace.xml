@@ -5,12 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8b2776a3-a346-4eaf-bc47-4d62a6e4db52" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Algorithm_Studying.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/to_240327/Solution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/back_0507_1/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/to_240429/Solution.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/to_240509/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/to_240510/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/A/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/A/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/back_0221/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/back_0221/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/back_0222/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/back_0222/Main.class" afterDir="false" />
@@ -1120,6 +1120,8 @@
       <change beforePath="$PROJECT_DIR$/bin/to_1228_2/Edge.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/to_1228_2/Edge.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/to_1228_2/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/to_1228_2/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/to_1228_2/Planet.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/to_1228_2/Planet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/to_240327/Info.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/to_240327/Info.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/to_240327/Solution.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/to_240327/Solution.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/to_24_0101_A/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/to_24_0101_A/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/to_24_0102_1/Edge.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/to_24_0102_1/Edge.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/to_24_0102_1/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/to_24_0102_1/Main.class" afterDir="false" />
@@ -1224,6 +1226,23 @@
       <change beforePath="$PROJECT_DIR$/bin/to_24_0222_1/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/to_24_0222_1/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/to_24_0222_1/Marble.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/to_24_0222_1/Marble.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/to_24_0222_2/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/to_24_0222_2/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/to_24_0408_1/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/to_24_0408_1/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/to_24_0408_2/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/to_24_0408_2/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/to_24_0408_3/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/to_24_0408_3/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/to_24_0408_4/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/to_24_0408_4/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/to_24_0408_5/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/to_24_0408_5/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/to_24_0408_6/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/to_24_0408_6/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/to_24_0408_7/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/to_24_0408_7/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/to_24_0408_7/Marble.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/to_24_0408_7/Marble.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/to_24_0408_8/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/to_24_0408_8/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/to_24_0408_8/Marble.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/to_24_0408_8/Marble.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/to_24_0408_9/Main$Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/to_24_0408_9/Main$Node.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/to_24_0408_9/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/to_24_0408_9/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/to_24_0409_1/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/to_24_0409_1/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/to_24_0409_1/Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/to_24_0409_1/Node.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/to_24_0409_2/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/to_24_0409_2/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/to_24_0409_3/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/to_24_0409_3/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/to_1002_2/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/to_1002_2/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -1243,26 +1262,50 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2eGUNuPERgtK6FdPgX44MDORAhE" />
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../hello-spring" />
-    <property name="project.structure.last.edited" value="라이브러리" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.2" />
-  </component>
-  <component name="RunManager" selected="애플리케이션.Solution">
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/workspace/Algorithm_CodingTest",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "SDK",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
+    "vue.rearranger.settings.migration": "true",
+    "애플리케이션.Solution (1).executor": "Run"
+  }
+}]]></component>
+  <component name="RunManager" selected="애플리케이션.Solution (1)">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="to_240327.Main" />
       <module name="Algorithm_Studying" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="to_240327.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Solution (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="to_240429.Solution" />
+      <module name="Algorithm_Studying" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="to_240429.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -1285,10 +1328,19 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="애플리케이션.Solution (1)" />
         <item itemvalue="애플리케이션.Solution" />
         <item itemvalue="애플리케이션.Main" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.15989.150" />
+        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-IU-241.15989.150" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="애플리케이션 수준" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -1298,8 +1350,24 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1711530376341</updated>
+      <workItem from="1714624726709" duration="47000" />
+      <workItem from="1714624789219" duration="33000" />
+      <workItem from="1714624839635" duration="191000" />
+      <workItem from="1715041414236" duration="405000" />
+      <workItem from="1715070785695" duration="1327000" />
+      <workItem from="1715131086772" duration="269000" />
+      <workItem from="1715227834368" duration="830000" />
+      <workItem from="1715228858522" duration="11000" />
+      <workItem from="1715230465503" duration="28000" />
+      <workItem from="1715237368436" duration="503000" />
+      <workItem from="1715300784659" duration="41000" />
+      <workItem from="1715300842107" duration="420000" />
+      <workItem from="1715489290034" duration="25000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -1321,5 +1389,9 @@
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

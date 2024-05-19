@@ -53,7 +53,7 @@ public class Main {
             int[] result = kruskal(n);
             if(result[1] == n - 1) sb.append(result[0] + " ");
             else {
-                sb.append("0 ".repeat(k - i));
+
                 break;
             }
             mst.poll();
